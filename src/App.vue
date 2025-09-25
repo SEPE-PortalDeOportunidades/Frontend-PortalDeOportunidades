@@ -4,4 +4,3 @@
 <router-link />
 </template>
 
-<style scoped></style>
