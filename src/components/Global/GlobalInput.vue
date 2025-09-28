@@ -5,7 +5,7 @@ defineProps ({
     label: String,  //tipo da label, no caso, vai ser uma string
     type: {
         type: String, 
-        default: "text" //se o tecnico nao fala nada, o jogador entra como armador, no caso text = armador
+        default: "text" //se o tecnico nao fala nada, o jogador entra como armador, no caso text = armador.
     }
 
     
