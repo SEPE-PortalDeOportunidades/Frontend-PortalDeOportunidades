@@ -1,7 +1,8 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue'
+const nome = ref("")
+</script>
 
 <template>
-<router-link />
+  <RouterView />
 </template>
-
-<style scoped></style>
