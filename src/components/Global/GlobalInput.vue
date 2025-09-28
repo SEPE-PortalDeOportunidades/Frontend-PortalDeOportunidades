@@ -4,14 +4,14 @@ defineProps ({
     modelValue: String,  //modelvalue é tipo o treinador entregando a bola pro jogador treinar(inital value)
     label: String,  //tipo da label, no caso, vai ser uma string
     type: {
-        type: String, 
+        type: String,
         default: "text" //se o tecnico nao fala nada, o jogador entra como armador, no caso text = armador.
     }
 
-    
+
 })
 
-const emit = defineEmits(["update:modelValue"]) 
+const emit = defineEmits(["update:modelValue"])
 </script>
 <template>
   <div>
