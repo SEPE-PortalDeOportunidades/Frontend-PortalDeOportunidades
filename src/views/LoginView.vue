@@ -16,20 +16,20 @@ const senha = ref("")
             <form @submit.prevent="handleLogin">
                 <div>
                     <h1>Portal de Oportunidades</h1>
-                    <label for="GlobalInput">Matricula</label>
+                    <label for="GlobalInput">Matricula*</label>
                     <GlobalInput v-model="email" placeholder="" type="email" class="mb-4 input" />
 
 
                 </div>
                 <div>
-                    <label for="GlobalInput">Senha</label>
+                    <label for="GlobalInput">Senha*</label>
                     <GlobalInput v-model="senha" placeholder="" type="password" class="mb-4 input" />
                 </div>
                 <p>Esqueceu a senha? <a href="#">Clique Aqui</a></p>
                 <GlobalButton label="Entrar" type="submit" @click="enviarFormulario" />
             </form>
-            <p class="ifc">Copyright © 2025 <br>IFC - Campus Araquari</p>
-            
+            <p class="ifc">Copyright © {{ new Date().getFullYear() }} <br>IFC - Campus Araquari</p>
+
         </div>
     </div>
 </template>
@@ -63,10 +63,10 @@ const senha = ref("")
     margin: 100px 100px 100px 208px;
     border-radius: 20px;
     align-items: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-h1{
+h1 {
     position: relative;
     bottom: 30px;
 }
@@ -77,7 +77,7 @@ label {
 
 }
 
-p{
+p {
     position: relative;
     bottom: 20px;
 
@@ -98,8 +98,4 @@ button {
     top: 50px;
     text-align: center;
 }
-
-
-
-
 </style>
