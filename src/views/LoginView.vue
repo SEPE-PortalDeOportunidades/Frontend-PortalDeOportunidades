@@ -14,15 +14,15 @@ const enviarFormulario = () => {
     matricula: matricula.value,
     senha: senha.value,
   });
-
-  console.log("Dados salvos:", dados.value);
-  console.log("Matricula:", matricula.value);
-  console.log("Senha:", senha.value);
-};
-
+  
 </script>
-
 <template>
+            <form @submit.prevent="handleLogin">
+                <div>
+                    <h1>Portal de Oportunidades</h1>
+                    <label for="GlobalInput">Matricula*</label>
+                    <GlobalInput v-model="email" placeholder="" type="email" class="mb-4 input" />
+
   <div class="background">
     <div class="container">
       <form @submit.prevent="handleLogin">
@@ -72,15 +72,15 @@ const enviarFormulario = () => {
 }
 
 .container {
-  position: relative;
-  z-index: 1;
-  background-color: white;
-  width: 400px;
-  padding: 150px 60px 100px 90px;
-  margin: 100px 100px 100px 208px;
-  border-radius: 20px;
-  align-items: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    width: 400px;
+    padding: 150px 60px 100px 90px;
+    margin: 100px 100px 100px 208px;
+    border-radius: 20px;
+    align-items: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
@@ -93,8 +93,8 @@ label {
 }
 
 p {
-  position: relative;
-  bottom: 20px;
+    position: relative;
+    bottom: 20px;
 }
 
 button {
@@ -110,4 +110,5 @@ button {
   top: 50px;
   text-align: center;
 }
+
 </style>

@@ -30,8 +30,8 @@ const emit = defineEmits(["update:modelValue"])
 <style>
 input {
     border-radius: 15px;
-    width: 375px;
-    height: 40px;
+    padding: 10px 35px;
+    font-size: 24px;
     background-color: rgb(247, 247, 247);
     border: none;
     margin-bottom: 15px;
