@@ -27,18 +27,19 @@ const emit = defineEmits(["click"])
 <style scoped>
 .globalbutton {
   padding: 0.5rem 1rem; 
-  background-color: #000000; 
+  background-color: #107207; 
   color: white; 
-  border-radius: 0.375rem; 
+  border-radius: 12px; 
   transition: background-color 0.3s ease;
   cursor: pointer;
   width: 200px;
   height: 40px;
   font-size: 18px;
+  border: none;
 }
 
 .globalbutton:hover {
-  background-color: #3d3d3d; 
+  background-color: #118307; 
 }
 
 
