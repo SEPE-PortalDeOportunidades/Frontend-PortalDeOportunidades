@@ -1,8 +1,8 @@
-<script setup>
-import GlobalInput from "@/components/Global/GlobalInput.vue";
-import GlobalButton from "@/components/Global/GlobalButton.vue";
-import { ref } from "vue";
+<script>
 
+import GlobalInput from "@/components/Global/GlobalInput.vue"
+import GlobalButton from "@/components/Global/GlobalButton.vue"
+import { ref } from "vue"
 
 const matricula = ref("");
 const senha = ref("");
@@ -50,21 +50,33 @@ const enviarFormulario = () => {
 </template>
 
 <style scoped>
+:global(html, body) {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; 
+}
+
 .background {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;  
   height: 100vh;
   overflow: hidden;
 }
 
 .background::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("@/assets/images/background-login.png");
-  background-size: cover;
-  background-position: center;
-  filter: blur(3px);
-  z-index: 0;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('@/assets/images/background-login.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px);
+    z-index: 0;
+    overflow: hidden;
+
 }
 
 .container {
@@ -80,13 +92,16 @@ const enviarFormulario = () => {
 }
 
 h1 {
-  position: relative;
-  bottom: 30px;
+    position: relative;
+    bottom: 30px;
 }
 
 label {
-  margin: 5px;
+    margin: 5px;
+
+
 }
+
 
 p {
   position: relative;
@@ -95,16 +110,18 @@ p {
 }
 
 button {
-  position: relative;
-  left: 15%;
-  top: 25px;
+    position: relative;
+    left: 15%;
+    top: 25px;
+
+
 }
 
 .ifc {
-  display: flex;
-  justify-content: center;
-  right: 45px;
-  top: 50px;
-  text-align: center;
+    display: flex;
+    justify-content: center;
+    right: 45px;
+    top: 50px;
+    text-align: center;
 }
 </style>
