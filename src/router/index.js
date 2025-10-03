@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-        {
+    {
       path: '/Login',
       name: 'login',
       component: () => import('../views/LoginView.vue')
@@ -12,8 +12,25 @@ const router = createRouter({
       path: '/Home',
       name: 'Home',
       component: () => import('../views/HomeView.vue')
-      
+
+    },
+    {
+      path: '/forgot-password',
+      name: 'forgotPassword',
+      component: () => import('../views/FogertPassword.vue')
+
+    },
+    {
+      path: '/verify-code',
+      name: 'VerifyCode',
+      component: () => import('../views/VerifyCode.vue')
+    },
+      {
+      path: '/reset-password',
+      name: 'Password',
+      component: () => import('../views/ResetPassword.vue')
     }
+
 
     //{
     //  path: '/<nome do rota>',
