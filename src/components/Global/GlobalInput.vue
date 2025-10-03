@@ -21,19 +21,22 @@ const emit = defineEmits(["update:modelValue"])
       :type="type"
       :value="modelValue"
       @input="emit('update:modelValue', $event.target.value)"
-
-    />
+      :class="$attrs.class"
+/>
   </div>
 
 </template>
 
 <style>
 input {
-    border-radius: 15px;
-    padding: 10px 35px;
-    font-size: 24px;
-    background-color: rgb(247, 247, 247);
+    border-radius: 10px;
+    width: 370px;
+    height: 40px;
+    padding: 0 0 0 10px;
+    font-size: 20px;
+    background-color: rgb(236, 236, 236);
     border: none;
     margin-bottom: 15px;
+    box-shadow: 0 6px 8px  rgba(0, 0, 0, 0.1);
 }
 </style>
