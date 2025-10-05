@@ -25,15 +25,20 @@ const router = createRouter({
       name: 'VerifyCode',
       component: () => import('../views/VerifyCode.vue')
     },
-      {
+    {
       path: '/reset-password',
       name: 'Password',
       component: () => import('../views/ResetPassword.vue')
     },
-          {
+    {
       path: '/teste',
       name: 'teste',
       component: () => import('/src/teste.vue')
+    },
+    {
+      path: '/OpportunityRegistration',
+      name: 'Opportunity',
+      component: () => import('../views/OpportunityRegistration.vue')
     }
 
 
