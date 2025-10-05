@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import Notification from "@/components/Notification.vue";
+import Notification from "@/components/Notification.vue"; 
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faBell, faUser } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -8,9 +8,12 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 library.add(faBell, faUser);
 
 const showNotifications = ref(false);
+
+
 const notifications = ref([
-  "Nenhuma notificação no  momento"
+  "Nenhuma notificação no momento"
 ]);
+
 
 function toggleNotifications() {
   showNotifications.value = !showNotifications.value;
@@ -20,13 +23,24 @@ function toggleNotifications() {
 <template>
   <header>
     <div class="img">
-      <img src="/src/assets/images/logoIFC.png" alt="LOGO IFC ARaQUARI" />
+      <img src="/src/assets/images/logoIFC.png" alt="LOGO IFC Araquari" />
     </div>
+
     <div class="infos">
-      <router-link  class="btn" to="/OpportunityRegistration">Nova oportunidade</router-link>
-      <font-awesome-icon class="icon" :icon="['fas', 'bell']" @click="toggleNotifications" />
+      <font-awesome-icon
+        class="icon"
+        :icon="['fas', 'bell']"
+        @click="toggleNotifications"
+      />
+
+      <p>
+        Nome do aluno
+        <span>Aluno</span>
+      </p>
+
       <font-awesome-icon class="icon" :icon="['fas', 'user']" />
     </div>
+
     <Notification
       :visible="showNotifications"
       :notifications="notifications"
@@ -42,31 +56,14 @@ header {
   justify-content: space-between;
   padding: 10px 10px 0 20px;
   border-bottom: 1px solid #000;
-  margin-bottom: 20px;
 }
+
 
 
 .infos {
   padding-right: 15px;
   display: flex;
   align-items: center;
-}
-
-.btn {
-  background-color: black;
-  color: white;
-  width: 160px;
-  border-radius: 8px;
-  padding: 10px 0px;
-  margin-right: 25px;
-  transition: 0.2s ease;
-  cursor: pointer;
-  font-size: 15px;
-  text-decoration: none;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
 }
 
 .icon {
@@ -80,7 +77,27 @@ header {
 }
 
 .icon:hover {
-  box-shadow: 0px 2px 2px gray;
   transform: translateY(-2px);
+  box-shadow: 0px 3px 3px gray;
+}
+
+p {
+  background-color: rgb(211, 208, 208);
+  padding: 12px;
+  border-radius: 8px;
+  margin: 10px 10px 10px 0;
+  transition: 0.2s ease;
+}
+
+p span {
+  background-color: gray;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+p:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 2px 2px gray;
 }
 </style>
