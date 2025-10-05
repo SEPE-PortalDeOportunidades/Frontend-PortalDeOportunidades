@@ -1,4 +1,4 @@
-<script>
+<script setup>
 
 import GlobalInput from "@/components/Global/GlobalInput.vue"
 import GlobalButton from "@/components/Global/GlobalButton.vue"
@@ -30,7 +30,7 @@ const enviarFormulario = () => {
         <div>
           <h1>Portal de Oportunidades</h1>
           <label for="GlobalInput">Matricula*</label>
-          <GlobalInput v-model="email" placeholder="" type="email" class="mb-4 input" />
+          <GlobalInput v-model="matricula" placeholder="" type="number" class="mb-4 input" />
 
 
         </div>
@@ -38,7 +38,7 @@ const enviarFormulario = () => {
           <label for="GlobalInput">Senha*</label>
           <GlobalInput v-model="senha" placeholder="" type="password" class="mb-4 input" />
         </div>
-        <p>Esqueceu a senha? <a href="#">Clique Aqui</a></p>
+        <p>Esqueceu a senha? <RouterLink to="/forgot-password">Clique Aqui</RouterLink></p>
         <GlobalButton label="Entrar" type="submit" @click="enviarFormulario" />
       </form>
       <p class="ifc">Copyright © {{ new Date().getFullYear() }} <br>IFC - Campus Araquari</p>

@@ -13,7 +13,7 @@ const text = ref('')
       <GlobalInput v-model="password" placeholder="Insira nova senha" type="password" class="mb-4 input" />
       <label for="GlobalInput" class="label-nova">Repita a nova senha</label>
       <GlobalInput v-model="password" placeholder="Insira novamente a senha nova" type="password" class="mb-4 input" />
-      <router-link to="/Login"><GlobalButton label="Enviar" type="submit" @click="verificarEmail" /></router-link>
+      <router-link to="/"><GlobalButton label="Enviar" type="submit" @click="verificarEmail" /></router-link>
 
     </div>
   </div>
