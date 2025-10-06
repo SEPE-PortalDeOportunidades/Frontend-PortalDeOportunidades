@@ -39,7 +39,12 @@ const router = createRouter({
       path: '/OpportunityRegistration',
       name: 'Opportunity',
       component: () => import('../views/OpportunityRegistration.vue')
+    }, {
+      path: '/ApplyOpportunity',
+      name: 'ApplyOpportunity',
+      component: () => import('../views/ApplyOpportunity.vue')
     }
+
 
 
     //{
