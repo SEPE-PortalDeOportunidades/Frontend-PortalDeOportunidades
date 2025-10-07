@@ -1,6 +1,6 @@
 <script setup>
 import { defineProps, defineEmits } from "vue";
-
+// defined props for the notification component
 const props = defineProps({
   visible: {
     type: Boolean,
@@ -16,6 +16,7 @@ const emit = defineEmits(["close"]);
 </script>
 
 <template>
+  <!-- create a notification panel that slides in from the right -->
   <transition name="slide-fade">
     <div v-if="visible" class="notificacao">
       <div class="painel">
@@ -39,6 +40,7 @@ const emit = defineEmits(["close"]);
 </template>
 
 <style scoped>
+/* notification style */
 .notificacao {
   position: fixed;
   inset: 0;
@@ -107,41 +109,3 @@ li {
   transform: translateX(100%);
 }
 </style>
-
-
-<!-- <script setup>
-adicionar nas paginas que vao usar o componente
-
-import { ref } from "vue";
-import Notification from "@/components/Notification.vue";
-
-const showNotifications = ref(false);
-const notifications = ref([]);
-
-function toggleNotifications() {
-  showNotifications.value = !showNotifications.value;
-}
-</script>
-
-<template>
-  <div>
-    <button @click="toggleNotifications" class="i-sino">
-    colocar icone aqui dps
-    </button>
-    
-    <Notification
-      :visible="showNotifications"
-      :notifications="notifications"
-      @close="showNotifications = false"
-    />
-  </div>
-</template>
-
-<style scoped>
-.i-sino {
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-</style> -->

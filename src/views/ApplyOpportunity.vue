@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from "vue"
-
+// variables for the form
 const nome = ref("")
 const cpf = ref("")
 const telefone = ref("")
@@ -45,6 +45,7 @@ const cancelar = () => {
 </script>
 
 <template>
+    <!-- opportunity application form -->
     <div class="container">
         <div class="form-box">
             <h2>Dados Pessoais</h2>
@@ -132,6 +133,7 @@ const cancelar = () => {
 </template>
 
 <style scoped>
+/* container style */
 .container {
     display: flex;
     justify-content: center;

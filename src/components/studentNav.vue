@@ -54,8 +54,9 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 10px 0 20px;
+  padding: 19px 40px 1px 40px;
   border-bottom: 1px solid #000;
+  margin-bottom: 10px;
 }
 
 

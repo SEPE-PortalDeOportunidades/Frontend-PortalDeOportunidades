@@ -43,8 +43,17 @@ const router = createRouter({
       path: '/ApplyOpportunity',
       name: 'ApplyOpportunity',
       component: () => import('../views/ApplyOpportunity.vue')
+    }, 
+    {
+      path: '/TeacherScreen',
+      name: 'TeacherScreen',
+      component: () => import('../views/TeacherScreen.vue')
+    },
+        {
+      path: '/StudentScreen',
+      name: 'StudentScreen',
+      component: () => import('../views/StudentScreen.vue')
     }
-
 
 
     //{

@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue"
 
-
+//variables for the form
 const nome = ref("")
 const cpf = ref("")
 const telefone = ref("")
@@ -28,6 +28,7 @@ const enviarFormulario = () => {
 </script>
 
 <template>
+  <!-- opportunity registration form -->
   <div class="container">
 
     <div class="personal-infos">
@@ -87,6 +88,7 @@ const enviarFormulario = () => {
 </template>
 
 <style scoped>
+/* container style */
 .container {
   border: 1px solid rgb(59, 59, 59);
   border-radius: 8px;
