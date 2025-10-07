@@ -1,65 +1,12 @@
 <script setup>
-import studentNav from '@/components/studentNav.vue'
-import Filtters from '@/components/Fillters.vue'
-import EventCards from '@/components/EventCards.vue'
+import studentNav from "@/components/studentNav.vue";
+import Filtters from "@/components/Fillters.vue";
+import EventCards from "@/components/EventCards.vue";
+import { useFakeDataStore } from "@/stores/fakeDataStore.js";
 
-// Dados de exemplo para v-for
-const eventos = [
-  {
-    tipo: "Estágio",
-    titulo: "Estágio em Desenvolvimento Web",
-    descricao: "Oportunidade de estágio em empresa parceira para estudantes de Informática.",
-    data: "Prazo: 17/09/2025",
-    professor: "Prof. João Silva",
-    curso: "Informática, Sistemas de Informação",
-    requisitos: "Estar cursando a partir do 3º semestre."
-  },
-  {
-    tipo: "Edital",
-    titulo: "Edital de Monitoria 2025",
-    descricao: "Monitoria remunerada para o curso de Sistemas de Informação.",
-    data: "Prazo: 25/09/2025",
-    professor: "Prof. Ana Souza",
-    curso: "Informática",
-    requisitos: "Ter concluído o 2º semestre."
-  },
-  {
-    tipo: "Evento",
-    titulo: "Semana Acadêmica IFC",
-    descricao: "Participe de palestras e workshops sobre tecnologia e inovação.",
-    data: "De 05 a 09/10/2025",
-    professor: "Coordenação IFC",
-    curso: "Todos os cursos",
-    requisitos: "Aberto a todos os alunos."
-  },
-  {
-    tipo: "Estágio",
-    titulo: "Estágio em Suporte Técnico",
-    descricao: "Vaga de estágio para alunos de informática, suporte ao setor de TI.",
-    data: "Prazo: 10/10/2025",
-    professor: "Prof. Ricardo Lima",
-    curso: "Informática",
-    requisitos: "Estar cursando a partir do 3º semestre."
-  },
-    {
-    tipo: "Estágio",
-    titulo: "Estágio em Suporte Técnico",
-    descricao: "Vaga de estágio para alunos de informática, suporte ao setor de TI.",
-    data: "Prazo: 10/10/2025",
-    professor: "Prof. Ricardo Lima",
-    curso: "Informática",
-    requisitos: "Estar cursando a partir do 3º semestre."
-  },
-    {
-    tipo: "Estágio",
-    titulo: "Estágio em Suporte Técnico",
-    descricao: "Vaga de estágio para alunos de informática, suporte ao setor de TI.",
-    data: "Prazo: 10/10/2025",
-    professor: "Prof. Ricardo Lima",
-    curso: "Informática",
-    requisitos: "Estar cursando a partir do 3º semestre."
-  }
-]
+// Usando o store para obter os dados
+const fakeDataStore = useFakeDataStore();
+const eventos = fakeDataStore.oportunidades;
 </script>
 
 <template>
@@ -79,18 +26,20 @@ const eventos = [
         <Filtters />
 
         <div class="cards">
-          <EventCards
-            v-for="(evento, i) in eventos"
-            :key="i"
-            :tipo="evento.tipo"
-          >
+          <EventCards v-for="evento in eventos" :key="evento.id" :tipo="evento.tipo">
             <template #tipo>{{ evento.tipo }}</template>
+            <template v-if="evento.novo" #novo>Novo</template>
             <template #titulo>{{ evento.titulo }}</template>
             <template #descricao>{{ evento.descricao }}</template>
+            <template #descricaoCompleta>{{ evento.descricaoCompleta }}</template>
             <template #data>{{ evento.data }}</template>
             <template #professor>{{ evento.professor }}</template>
             <template #curso>Curso: {{ evento.curso }}</template>
+            <template #local>{{ evento.local }}</template>
+            <template #vagas>{{ evento.vagas }}</template>
             <template #requisitos>{{ evento.requisitos }}</template>
+            <template #beneficios>{{ evento.beneficios }}</template>
+            <template #status>{{ evento.status }}</template>
           </EventCards>
         </div>
       </section>

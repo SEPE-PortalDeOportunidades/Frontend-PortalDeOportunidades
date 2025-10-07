@@ -3,21 +3,35 @@
 import GlobalInput from "@/components/Global/GlobalInput.vue"
 import GlobalButton from "@/components/Global/GlobalButton.vue"
 import { ref } from "vue"
+import { useRouter } from "vue-router"
+import { useFakeDataStore } from '@/stores/fakeDataStore.js'
+
+// Usando router e store
+const router = useRouter()
+const fakeDataStore = useFakeDataStore()
+
 //variaveis para o login
 const matricula = ref("");
 const senha = ref("");
+const errorMessage = ref("");
 
-const dados = ref([]);
 //function to send the login and check with the database
 const enviarFormulario = () => {
-  dados.value.push({
-    matricula: matricula.value,
-    senha: senha.value,
-  });
+  // Validar login usando o store
+  const usuario = fakeDataStore.validarLogin(matricula.value, senha.value);
 
-  console.log("Dados salvos:", dados.value);
-  console.log("Matricula:", matricula.value);
-  console.log("Senha:", senha.value);
+  if (usuario) {
+    console.log("Login bem-sucedido:", usuario);
+    // Redirecionar baseado no tipo de usuário
+    if (usuario.tipo === "estudante") {
+      router.push("/StudentScreen");
+    } else if (usuario.tipo === "professor") {
+      router.push("/TeacherScreen");
+    }
+  } else {
+    errorMessage.value = "Matrícula ou senha incorretos!";
+    console.log("Falha no login");
+  }
 };
 
 </script>
@@ -36,6 +50,7 @@ const enviarFormulario = () => {
           <label for="GlobalInput">Senha*</label>
           <GlobalInput v-model="senha" placeholder="" type="password" class="mb-4 input" />
         </div>
+        <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
         <p>Esqueceu a senha? <RouterLink to="/forgot-password">Clique Aqui</RouterLink>
         </p>
         <RouterLink to="/StudentScreen">
@@ -57,7 +72,7 @@ const enviarFormulario = () => {
   height: 100%;
   overflow: hidden;
 }
-/* login background and container customization and remove scroll bar horizontal */ 
+/* login background and container customization and remove scroll bar horizontal */
 .background {
   position: absolute;
   top: 0;
@@ -121,6 +136,13 @@ p {
   justify-content: center;
   right: 45px;
   top: 50px;
+  text-align: center;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 10px;
   text-align: center;
 }
 </style>

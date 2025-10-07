@@ -31,7 +31,7 @@ const cores = computed(() => {
             <span class="tipo" :style="{ backgroundColor: cores.tipo }">
                 <slot name="tipo">Tipo</slot>
             </span>
-            <span class="novo" :style="{ backgroundColor: cores.novo }">
+            <span v-if="$slots.novo" class="novo" :style="{ backgroundColor: cores.novo }">
                 <slot name="novo">Novo</slot>
             </span>
         </div>

@@ -1,8 +1,11 @@
 <script setup>
 import { ref, computed } from "vue"
+import { useFakeDataStore } from '@/stores/fakeDataStore.js'
+
+// Usando o store
+const fakeDataStore = useFakeDataStore()
 
 // variables for the form
-
 const nome = ref("")
 const cpf = ref("")
 const telefone = ref("")
@@ -76,10 +79,9 @@ const cancelar = () => {
                 <label>Curso*<br />
                     <select v-model="curso">
                         <option value="">Selecione seu curso</option>
-                        <option>Agropecuaria</option>
-                        <option>Informática</option>
-                        <option>Química</option>
-                        <option>BSI</option>
+                        <option v-for="cursoOption in fakeDataStore.cursos" :key="cursoOption.id" :value="cursoOption.nome">
+                            {{ cursoOption.nome }}
+                        </option>
                     </select>
                 </label>
 
@@ -93,10 +95,9 @@ const cancelar = () => {
             <label>Ano*<br />
                 <select v-model="ano">
                     <option value="">Selecione o seu ano</option>
-                    <option>1º Ano</option>
-                    <option>2º Ano</option>
-                    <option>3º Ano</option>
-                    <option>Nivel superior</option>
+                    <option v-for="anoOption in fakeDataStore.anosLetivos" :key="anoOption.id" :value="anoOption.nome">
+                        {{ anoOption.nome }}
+                    </option>
                 </select>
             </label>
 
