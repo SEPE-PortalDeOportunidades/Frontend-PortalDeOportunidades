@@ -3,11 +3,11 @@ import GlobalButton from "@/components/Global/GlobalButton.vue"
 import { ref } from "vue"
 const text = ref('')
 
-//array dos digitos
+//array of digits
 const code = ref(["", "", "", "", "", ""])
 
 
-// função pra automatizar a entrada e ir pro proximo input
+// function to automate input and go to the next input
 function handleInput(e, idx) {
   const val = e.target.value
   if (/^\d?$/.test(val)) {
@@ -19,7 +19,7 @@ function handleInput(e, idx) {
   }
 }
 
-// função pra voltar pro input anterior quando apagar
+// function to return to the previous input when deleting
 function handleKeydown(e, idx) {
   if (
     e.key === "Backspace" &&
@@ -35,16 +35,18 @@ function handleKeydown(e, idx) {
 <template>
   <div class="background">
     <div class="container">
-      <h1>Qual é o seu email?</h1>
-      <p class="id">Para que possmaos identificar qual sua conta precisamos saber o email que esta ligado a sua conta.</p>
+      <h1>Verifique seu email</h1>
+      <p class="id">Verifique o codigo de de recuperação de senha para que posso alterar sua senha</p>
       <div class="code-inputs">
 
-        <!-- input do codigo de verificacaoo -->
+        <!-- verification code input -->
         <input v-for="(digit, idx) in code" :key="idx" maxlength="1" type="text" inputmode="numeric" class="code-box"
           v-model="code[idx]" @input="handleInput($event, idx)" @keydown="handleKeydown($event, idx)" />
       </div>
       <p class="send">Não chegou o codigo? <button class="resend" @click="reenviarCodigo">Reenviar Codigo </button></p>
-      <router-link to="/reset-password"><GlobalButton label="Enviar" type="submit" @click="codigo" /></router-link>
+      <router-link to="/reset-password">
+        <GlobalButton label="Enviar" type="submit" @click="codigo" />
+      </router-link>
     </div>
   </div>
 
@@ -58,6 +60,8 @@ function handleKeydown(e, idx) {
   height: 100%;
   overflow: hidden;
 }
+
+/* forgertPassword container and background style */
 
 .background {
   position: absolute;
@@ -102,11 +106,11 @@ h1 {
 
 p.id {
   color: #525151;
-  text-align: start;
+  text-align: center;
   width: 300px;
   font-weight: bold;
   margin: 0 auto -10px auto;
-  padding-right: 40px;
+
 }
 
 :deep(.input) {
@@ -151,6 +155,7 @@ p.send {
   padding-left: 30px;
 
 }
+
 .resend {
   background: none;
   border: none;

@@ -1,11 +1,11 @@
 <script setup>
 import { defineProps, defineEmits } from "vue"
 defineProps ({
-    modelValue: String,  //modelvalue é tipo o treinador entregando a bola pro jogador treinar(inital value)
-    label: String,  //tipo da label, no caso, vai ser uma string
+    modelValue: String,  //modelvalue is like the coach handing the ball to the player to train (initial value)
+    label: String,  //label type, in this case, it will be a string
     type: {
         type: String,
-        default: "text" //se o tecnico nao fala nada, o jogador entra como armador, no caso text = armador.
+        default: "text" //if the coach doesn't say anything, the player enters as a point guard, in this case text = point guard.
     }
 
 
@@ -14,10 +14,11 @@ defineProps ({
 const emit = defineEmits(["update:modelValue"])
 </script>
 <template>
+  <!-- create a reusable input component -->
   <div>
     <label v-if="label" :for="label" class="block mb-1">{{ label }}</label>
     <input
-      v-bind="$attrs"
+      v-bind="$attrs" 
       :type="type"
       :value="modelValue"
       @input="emit('update:modelValue', $event.target.value)"
@@ -28,6 +29,7 @@ const emit = defineEmits(["update:modelValue"])
 </template>
 
 <style>
+/* input style */
 input {
     border-radius: 10px;
     width: 370px;

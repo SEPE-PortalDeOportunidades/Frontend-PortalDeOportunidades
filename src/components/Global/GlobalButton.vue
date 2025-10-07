@@ -1,16 +1,17 @@
 <script setup>
 import { defineProps, defineEmits } from "vue"
 
-// Props do botão
+// props for the button component: props are the primary way pass data from a parent component down to a child component
 defineProps({
   label: { type: String, required: true },
   type: { type: String, default: "button" },
   disabled: { type: Boolean, default: false }
 })
-
+// defined emit: its how the Child component notifies the Parent that something has happened.
 const emit = defineEmits(["click"])
-</script>
 
+</script>
+<!-- create a button with the label passed as a prop -->
 <template>
   <button
     :type="type"
@@ -25,6 +26,7 @@ const emit = defineEmits(["click"])
 </template>
 
 <style scoped>
+/* global button style */
 .globalbutton {
   padding: 0.5rem 1rem; 
   background-color: #107207; 

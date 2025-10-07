@@ -36,13 +36,17 @@ function toggleNotifications() {
 </template>
 
 <style scoped>
+:root,
+:global(body) {
+  overflow-x: hidden;
+}
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 10px 0 20px;
+  padding: 19px 40px 0 40px;
   border-bottom: 1px solid #000;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 
@@ -55,18 +59,22 @@ header {
 .btn {
   background-color: black;
   color: white;
-  width: 160px;
+  width: 150px;
   border-radius: 8px;
-  padding: 10px 0px;
+  padding: 10px 15px 10px 20px;
   margin-right: 25px;
   transition: 0.2s ease;
   cursor: pointer;
   font-size: 15px;
   text-decoration: none;
+  justify-content: center;
+  display: flex;
+  text-align: center;
 }
 
 .btn:hover {
   transform: translateY(-2px);
+  background-color: rgb(44, 44, 44);
 }
 
 .icon {

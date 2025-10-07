@@ -1,4 +1,5 @@
 <script setup>
+//importing components
 import GlobalInput from "@/components/Global/GlobalInput.vue"
 import GlobalButton from "@/components/Global/GlobalButton.vue"
 import { ref } from "vue"
@@ -6,6 +7,7 @@ const text = ref('')
 </script>
 
 <template>
+  <!-- forgot password form -->
   <div class="background">
     <div class="container">
       <h1>Mudança de senha</h1>
@@ -13,7 +15,7 @@ const text = ref('')
       <GlobalInput v-model="password" placeholder="Insira nova senha" type="password" class="mb-4 input" />
       <label for="GlobalInput" class="label-nova">Repita a nova senha</label>
       <GlobalInput v-model="password" placeholder="Insira novamente a senha nova" type="password" class="mb-4 input" />
-      <router-link to="/"><GlobalButton label="Enviar" type="submit" @click="verificarEmail" /></router-link>
+      <router-link to="StudentScreen"><GlobalButton label="Enviar" type="submit" @click="verificarEmail" /></router-link>
 
     </div>
   </div>
@@ -28,7 +30,7 @@ const text = ref('')
   height: 100%;
   overflow: hidden; 
 }
-
+/* forgertPassword container and background style */
 .background {
   position: absolute;
   top: 0;
