@@ -55,4 +55,4 @@ async CreateEstagio(newEstagio) {
 
 }
 
-export default new CursoService();
+export default new EstagioService();
