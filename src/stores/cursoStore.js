@@ -9,7 +9,7 @@ export const useCursoStore = defineStore('curso', () => {
   const state = useStorage( 'cursoStorage', {
     cursos: [],
     selectedCurso: 1,
-    cursoById: null,
+    cursoById: null, 
   })
 
 
