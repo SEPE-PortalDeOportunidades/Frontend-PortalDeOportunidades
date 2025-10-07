@@ -50,7 +50,7 @@ export const useEditalStore = defineStore('edital', () => {
     }
   }
 
-  // ➕ Criar novo edital
+  //  Criar novo edital //
   const CreateEdital = async (newEdital) => {
     try {
       const response = await EditalService.CreateEdital(newEdital)
