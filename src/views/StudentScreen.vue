@@ -1,5 +1,5 @@
 <script setup>
-import teacherNav from '@/components/teacherNav.vue'
+import studentNav from '@/components/studentNav.vue'
 import Filtters from '@/components/Fillters.vue'
 import EventCards from '@/components/EventCards.vue'
 
@@ -104,6 +104,7 @@ const eventos = [
   font-family: "Poppins", sans-serif;
   background: #fff;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 /* NAVBAR */

@@ -1,6 +1,8 @@
 <script setup>
 import { ref, computed } from "vue"
+
 // variables for the form
+
 const nome = ref("")
 const cpf = ref("")
 const telefone = ref("")
