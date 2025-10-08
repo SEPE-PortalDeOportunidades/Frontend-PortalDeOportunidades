@@ -104,6 +104,7 @@ const eventos = [
   font-family: "Poppins", sans-serif;
   background: #fff;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 /* NAVBAR */

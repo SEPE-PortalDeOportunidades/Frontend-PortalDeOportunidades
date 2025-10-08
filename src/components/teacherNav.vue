@@ -20,7 +20,7 @@ function toggleNotifications() {
 <template>
   <header>
     <div class="img">
-      <img src="/src/assets/images/logoIFC.png" alt="LOGO IFC ARaQUARI" />
+      <img src="/src/assets/images/logoIFC (1).png" alt="LOGO IFC ARaQUARI" />
     </div>
     <div class="infos">
       <router-link  class="btn" to="/OpportunityRegistration">Nova oportunidade</router-link>
@@ -90,5 +90,10 @@ header {
 .icon:hover {
   box-shadow: 0px 2px 2px gray;
   transform: translateY(-2px);
+}
+
+img {
+  width: 120px;
+  height: 77px;
 }
 </style>
