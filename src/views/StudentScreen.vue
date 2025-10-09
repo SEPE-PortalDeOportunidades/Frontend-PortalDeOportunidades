@@ -332,10 +332,10 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 90px;
+  height: 50px;
   background: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  z-index: 1;
 }
 
 /* TÍTULO */

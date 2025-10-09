@@ -13,7 +13,7 @@ const props = defineProps({
 const cores = computed(() => {
     switch (props.tipo.toLowerCase()) {
         case "estágio":
-            return { card: "#ffffff", tipo: "#1e8c4a", novo: "#f0a500" };
+            return { card: "#ffffff", tipo: "#007bff", novo: "#007bff" };
         case "edital":
             return { card: "#ffffff", tipo: "#004aad", novo: "#3ab0ff" };
         case "evento":

@@ -36,10 +36,6 @@ function toggleNotifications() {
 </template>
 
 <style scoped>
-:root,
-:global(body) {
-  overflow-x: hidden;
-}
 header {
   display: flex;
   justify-content: space-between;
@@ -94,7 +90,7 @@ header {
 }
 
 img {
-  width: 130px;
-  height: 130px;
+  width: 100px;
+  height: 100px;
 }
 </style>

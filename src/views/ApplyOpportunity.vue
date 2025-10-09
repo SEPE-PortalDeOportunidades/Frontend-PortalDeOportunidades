@@ -5,14 +5,6 @@ import { useFakeDataStore } from '@/stores/fakeDataStore.js'
 // Usando o store
 const fakeDataStore = useFakeDataStore()
 
-// variables for the form
-const nome = ref("")
-const cpf = ref("")
-const telefone = ref("")
-const email = ref("")
-const curso = ref("")
-const matricula = ref("")
-const ano = ref("")
 const motivacao = ref("")
 const arquivo = ref(null)
 
@@ -24,26 +16,12 @@ const selecionarArquivo = (e) => {
 
 const enviarFormulario = () => {
     console.log({
-        nome: nome.value,
-        cpf: cpf.value,
-        telefone: telefone.value,
-        email: email.value,
-        curso: curso.value,
-        matricula: matricula.value,
-        ano: ano.value,
         motivacao: motivacao.value,
         arquivo: arquivo.value?.name || "nenhum arquivo",
     })
 }
 
 const cancelar = () => {
-    nome.value = ""
-    cpf.value = ""
-    telefone.value = ""
-    email.value = ""
-    curso.value = ""
-    matricula.value = ""
-    ano.value = ""
     motivacao.value = ""
     arquivo.value = null
 }
@@ -53,54 +31,6 @@ const cancelar = () => {
     <!-- opportunity application form -->
     <div class="container">
         <div class="form-box">
-            <h2>Dados Pessoais</h2>
-
-            <label>Nome completo*<br />
-                <input v-model="nome" placeholder="Digite seu nome completo" />
-            </label>
-
-            <div class="row">
-                <label>CPF*<br />
-                    <input v-model="cpf" placeholder="000.000.000-00" />
-                </label>
-
-                <label>Telefone*<br />
-                    <input v-model="telefone" placeholder="(00) 00000-0000" />
-                </label>
-            </div>
-
-            <label>E-mail*<br />
-                <input v-model="email" type="email" placeholder="seu.email@gmail.com" />
-            </label>
-
-            <h2>Dados Acadêmicos</h2>
-
-            <div class="row">
-                <label>Curso*<br />
-                    <select v-model="curso">
-                        <option value="">Selecione seu curso</option>
-                        <option v-for="cursoOption in fakeDataStore.cursos" :key="cursoOption.id" :value="cursoOption.nome">
-                            {{ cursoOption.nome }}
-                        </option>
-                    </select>
-                </label>
-
-                <label>Matrícula*<br />
-                    <input v-model="matricula" placeholder="2025091234" />
-                </label>
-            </div>
-
-            <h2>Motivação</h2>
-
-            <label>Ano*<br />
-                <select v-model="ano">
-                    <option value="">Selecione o seu ano</option>
-                    <option v-for="anoOption in fakeDataStore.anosLetivos" :key="anoOption.id" :value="anoOption.nome">
-                        {{ anoOption.nome }}
-                    </option>
-                </select>
-            </label>
-
             <label>Motivação*<br />
                 <textarea v-model="motivacao" placeholder="Descreva sua motivação para se inscrever..."
                     maxlength="1000"></textarea>
@@ -151,7 +81,7 @@ const cancelar = () => {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+label {
     font-size: 18px;
     color: #000;
     margin: 25px 0 10px 0;

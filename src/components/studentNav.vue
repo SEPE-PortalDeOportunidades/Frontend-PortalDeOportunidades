@@ -46,8 +46,8 @@ function toggleNotifications() {
         {{ usuario.nome }}
         <span>Aluno</span>
       </p>
-
-      <font-awesome-icon class="icon" :icon="['fas', 'user']" />
+      <RouterLink class="btn" to="/userview"><font-awesome-icon class="icon" :icon="['fas', 'user']" /></RouterLink>
+      
     </div>
 
     <Notification
@@ -60,15 +60,15 @@ function toggleNotifications() {
 
 <style scoped>
 img {
-  width: 130px;
-  height: 130px;
+  width: 100px;
+  height: 100px;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 100px;
+  padding: 0px 50px;
   border-bottom: 1px solid #000;
   background-color: #f5f5f5;
   box-sizing: border-box;

@@ -49,13 +49,13 @@ function fazerLogin() {
           />
         </div>
 
-        <div>
+        <div class="conj">
           <label for="GlobalInput">Senha*</label>
           <GlobalInput
             v-model="senha"
             placeholder=""
             type="password"
-            class="mb-4 input"
+            class="p-4 input"
           />
         </div>
 
@@ -82,14 +82,6 @@ function fazerLogin() {
 </template>
 
 <style scoped>
-:global(html, body) {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
-}
-
-
 .background {
   position: fixed;
   inset: 0;
@@ -125,17 +117,12 @@ body,
   padding: 60px 40px;
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  text-align: center;
 }
 
 h1 {
   margin-bottom: 20px;
 }
 
-label {
-  display: block;
-  margin: 10px 0 5px;
-}
 
 p {
   margin-bottom: 15px;
@@ -161,6 +148,11 @@ p {
   font-size: 14px;
   margin-top: 10px;
   text-align: center;
+}
+
+.conj{
+  display: flex;
+  flex-direction: column;
 }
 </style>
 
