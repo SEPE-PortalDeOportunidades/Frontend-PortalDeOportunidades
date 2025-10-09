@@ -4,10 +4,10 @@ import { ref } from 'vue'
 // Filtros e cores
 const filtros = [
   { nome: 'Todos', cor: '#049f45' },      // Verde
-  { nome: 'Estágios', cor: '#007bff' },   // Azul
-  { nome: 'Monitorias', cor: '#ffc107' }, // Amarelo
-  { nome: 'Eventos', cor: '#dc3545' },    // Vermelho
-  { nome: 'Editais', cor: '#6f42c1' }     // Roxo
+  { nome: 'Estágio', cor: '#007bff' },    // Azul
+  { nome: 'Monitoria', cor: '#ffc107' },  // Amarelo
+  { nome: 'Evento', cor: '#dc3545' },     // Vermelho
+  { nome: 'Edital', cor: '#6f42c1' }      // Roxo
 ]
 
 const filtroAtivo = ref('Todos')
@@ -17,6 +17,7 @@ const emit = defineEmits(['update'])
 
 function selecionar(filtroNome) {
   filtroAtivo.value = filtroNome
+  console.log("Filtro selecionado:", filtroAtivo.value)
   emit('update', filtroNome)
 }
 </script>
@@ -26,9 +27,10 @@ function selecionar(filtroNome) {
     <button
       v-for="filtro in filtros"
       :key="filtro.nome"
-      :class="['botao', { ativo: filtroAtivo.value === filtro.nome }]"
+      class="botao"
+      :class="{ ativo: filtroAtivo === filtro.nome }"
       @click="selecionar(filtro.nome)"
-      :style="filtroAtivo.value === filtro.nome ? { backgroundColor: filtro.cor } : {}"
+      :style="filtroAtivo === filtro.nome ? { backgroundColor: filtro.cor, color: '#fff' } : {}"
     >
       {{ filtro.nome }}
     </button>
@@ -68,8 +70,7 @@ function selecionar(filtroNome) {
 }
 
 .botao.ativo {
-  color: white;
-  font-weight: 500;
+  font-weight: 600;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 </style>
