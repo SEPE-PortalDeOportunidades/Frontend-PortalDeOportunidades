@@ -60,28 +60,28 @@ function toggleNotifications() {
 
 <style scoped>
 img {
-  width: 120px;
-  height: 60px;
+  width: 130px;
+  height: 130px;
 }
-/* Header principal */
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  padding: 0px 100px;
   border-bottom: 1px solid #000;
   background-color: #f5f5f5;
   box-sizing: border-box;
 }
 
-/* Container de ícones e informações do usuário */
+
 .infos {
   display: flex;
   align-items: center;
-  gap: 15px; /* espaço consistente entre itens */
+  gap: 15px; 
 }
 
-/* Ícones (sino, usuário) */
+
 .icon {
   display: flex;
   justify-content: center;
@@ -99,7 +99,7 @@ header {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
 }
 
-/* Caixa de nome do usuário */
+
 p {
   display: flex;
   align-items: center;
@@ -107,7 +107,8 @@ p {
   margin: 0;
   padding: 8px 12px;
   border-radius: 8px;
-  background-color: rgb(211, 208, 208);
+  color: white;
+  background-color: rgb(0, 0, 0);
   font-size: 14px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -117,10 +118,10 @@ p:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Nome do usuário em destaque */
+
 p span {
-  background-color: gray;
-  color: white;
+  background-color: rgb(3, 139, 26);
+  color: rgb(0, 0, 0);
   padding: 5px 10px;
   border-radius: 20px;
   font-weight: 500;

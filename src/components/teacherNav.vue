@@ -42,11 +42,12 @@ function toggleNotifications() {
 }
 header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 19px 40px 0 40px;
+  align-items: center;
+  padding: 0px 100px;
   border-bottom: 1px solid #000;
-  margin-bottom: 10px;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
 }
 
 
@@ -93,7 +94,7 @@ header {
 }
 
 img {
-  width: 120px;
-  height: 77px;
+  width: 130px;
+  height: 130px;
 }
 </style>
