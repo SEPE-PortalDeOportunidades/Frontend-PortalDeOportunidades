@@ -143,7 +143,7 @@ export const useFakeDataStore = defineStore("fakeData", () => {
       id: 2,
       matricula: "2024005678",
       senha: "abcd123",
-      nome: "Maria Oliveira Costa",
+      nome: "Marcos enzaqueu Costa",
       email: "maria.costa@estudante.ifc.edu.br",
       curso: "BSI",
       ano: "2º Ano",

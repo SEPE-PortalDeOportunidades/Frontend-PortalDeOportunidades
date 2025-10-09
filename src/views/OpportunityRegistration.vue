@@ -82,7 +82,7 @@ const enviarFormulario = () => {
 
 
     <div class="button-wrapper">
-      <button type="button" @click="enviarFormulario">Enviar formulário</button>
+    <router-link to="/teacherScreen"> <button type="button" @click="enviarFormulario">Enviar formulário</button></router-link> 
     </div>
   </div>
 </template>

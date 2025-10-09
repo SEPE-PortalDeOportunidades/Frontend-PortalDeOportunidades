@@ -18,6 +18,7 @@ const emit = defineEmits(["update:modelValue"])
   <div>
     <label v-if="label" :for="label" class="block mb-1">{{ label }}</label>
     <input
+      min = "0"
       v-bind="$attrs" 
       :type="type"
       :value="modelValue"

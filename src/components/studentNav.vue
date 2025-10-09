@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import Notification from "@/components/Notification.vue"; 
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faBell, faUser } from "@fortawesome/free-solid-svg-icons";
@@ -10,10 +10,19 @@ library.add(faBell, faUser);
 const showNotifications = ref(false);
 
 
+const usuario = ref({ nome: "Aluno" }); 
+
+onMounted(() => {
+  const usuarioSalvo = localStorage.getItem("usuarioLogado");
+  if (usuarioSalvo) {
+    usuario.value = JSON.parse(usuarioSalvo);
+  }
+});
+
+// Notificações
 const notifications = ref([
   "Nenhuma notificação no momento"
 ]);
-
 
 function toggleNotifications() {
   showNotifications.value = !showNotifications.value;
@@ -23,7 +32,7 @@ function toggleNotifications() {
 <template>
   <header>
     <div class="img">
-      <img src="/src/assets/images/logoIFC.png" alt="LOGO IFC Araquari" />
+      <img src="/src/assets/images/logoIFC (1).png" alt="LOGO IFC Araquari" />
     </div>
 
     <div class="infos">
@@ -34,7 +43,7 @@ function toggleNotifications() {
       />
 
       <p>
-        Nome do aluno
+        {{ usuario.nome }}
         <span>Aluno</span>
       </p>
 
@@ -50,55 +59,72 @@ function toggleNotifications() {
 </template>
 
 <style scoped>
+img {
+  width: 120px;
+  height: 60px;
+}
+/* Header principal */
 header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 19px 40px 1px 40px;
+  align-items: center;
+  padding: 15px 40px;
   border-bottom: 1px solid #000;
-  margin-bottom: 10px;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
 }
 
-
-
+/* Container de ícones e informações do usuário */
 .infos {
-  padding-right: 15px;
   display: flex;
   align-items: center;
+  gap: 15px; /* espaço consistente entre itens */
 }
 
+/* Ícones (sino, usuário) */
 .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid black;
-  padding: 11px;
+  padding: 10px;
   border-radius: 8px;
-  margin-right: 10px;
-  transition: 0.2s;
-  box-shadow: 0px 2px 2px gray;
   cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .icon:hover {
   transform: translateY(-2px);
-  box-shadow: 0px 3px 3px gray;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
 }
 
+/* Caixa de nome do usuário */
 p {
-  background-color: rgb(211, 208, 208);
-  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 8px 12px;
   border-radius: 8px;
-  margin: 10px 10px 10px 0;
-  transition: 0.2s ease;
+  background-color: rgb(211, 208, 208);
+  font-size: 14px;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
+p:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Nome do usuário em destaque */
 p span {
   background-color: gray;
   color: white;
   padding: 5px 10px;
   border-radius: 20px;
+  font-weight: 500;
 }
 
-p:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 2px 2px gray;
-}
+
 </style>

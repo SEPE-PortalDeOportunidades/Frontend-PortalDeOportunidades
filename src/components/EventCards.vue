@@ -18,6 +18,8 @@ const cores = computed(() => {
             return { card: "#ffffff", tipo: "#004aad", novo: "#3ab0ff" };
         case "evento":
             return { card: "#ffffff", tipo: "#e67e22", novo: "#27ae60" };
+        case "monitoria":
+            return { card: "#ffffff", tipo: "#ffc107", novo: "#9b59b6" };
         default:
             return { card: "#ffffff", tipo: "#7f8c8d", novo: "#bdc3c7" };
     }
